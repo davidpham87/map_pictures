@@ -1,7 +1,9 @@
 var width = 580,
 height = 480;
 
-var projection = d3.geo.mercator()
+
+//d3.geo.azimuthalEqualArea()
+var projection = d3.geo.mercator() 
   .scale((width + 1) / 1.65 / Math.PI)
   .translate([width / 2 - 25, height / 2 + 80])
   .precision(.1);
