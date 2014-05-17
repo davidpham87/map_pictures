@@ -1,6 +1,8 @@
 var width = 640,
 height = 480;
 
+
+
 var projection = d3.geo.mercator()
     .scale((width + 1) / 1.6 / Math.PI)
     .translate([width / 2 - 25, height / 2 + 80])
@@ -131,10 +133,16 @@ function putCityVoronoi(error, data){
         .on("click", updateSlider);
 
     addToolTip(cities, tooltip, htmlInsideTooltipFn);
-
+    
+    var this_location;
     function updateSlider(d, i){
         
         d = data[i];
+        if (this_location == d.location){
+            return;
+        }
+        console.log(this_location);
+        this_location = d.location;
         var newSlides = updatePictures(d.location, d.nPictures);
         d3.select('#pictureSlider')
             .remove();
@@ -163,7 +171,7 @@ function putCityVoronoi(error, data){
             htmlText += newPict(i);
         }
         htmlText += '</ul> \n';
-        console.log(htmlText);
+        //console.log(htmlText);
         return htmlText;
     }
 
