@@ -19,7 +19,12 @@ The csv has the following columns:
 
 # Assumptions about the inputs
 
+The pictures should be *.jpeg* files in 4/3 format (with resolution for example _640x480_).
+
 As previously noted the pictures for each _location_ __loc__are located in the folder _data/pictures/**loc**_. They are nammed as __xx.jpg__ where _xx_ starts from 01 up to the number given by _nPictures_.
 
+For example, to continue our example about New York, the folder __data/pictures/New York__ should contain the jpegs __01.jpeg__, __02.jpeg__, ..., up to nPictures.
 
 # How it works
+
+It is mainly backend by *topoJson*, *D3.js* and *flexslider*.
