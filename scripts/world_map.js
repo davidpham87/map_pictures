@@ -156,7 +156,8 @@ function putCityVoronoi(error, data){
             .html(newSlides);
         
         $('.flexslider').flexslider({
-            animation: "slide"
+            animation: "slide",
+            slideshowSpeed: 3000,
         });
 }
     function updatePictures(location, nPictures){
