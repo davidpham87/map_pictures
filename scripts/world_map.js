@@ -2,7 +2,7 @@ var width = 580,
 height = 480;
 
 var projection = d3.geo.mercator()
-    .scale((width + 1) / 1.6 / Math.PI)
+    .scale((width + 1) / 1.65 / Math.PI)
     .translate([width / 2 - 25, height / 2 + 80])
     .precision(.1);
 
@@ -125,7 +125,7 @@ function putCityVoronoi(error, data){
         .data(data)
         .enter().append("circle")
         .attr("class", "city")
-        .attr('r', function(d) {return 0.25*(d.bubbleSize+1);})
+        .attr('r', function(d) {return 0.22*(d.bubbleSize+1);})
         .attr("cx", function(d) { return pathCentroid(d)[0]; })
         .attr("cy", function(d) { return pathCentroid(d)[1]; })
         .on("click", updateSlider);
