@@ -12,8 +12,16 @@ You probably need [Python](https://www.python.org/download/) and the [PIL](http:
 
 You just need to put your pictures from a certain location *loc* in the folder
 *pictures_portrait/loc* and then run the scripts to find the results in the
-folder *pictures_landscape/loc*. For example, some pictures from Geneva would be in the folder *pictures_portrait/Geneva* and the results would be in
+folder *pictures_landscape/loc*.
+
+For example, some pictures from Geneva would be in the folder *pictures_portrait/Geneva* and the results would be in
 *pictures_landscape/Geneva*.
+
+Then you just need to run it with
+
+```{bash}
+python resize_crop_pictures.py
+```
 
 The pitures are all renamed and resized to fit in the pictures sliders from the **index.html**.
 
