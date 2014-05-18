@@ -32,7 +32,6 @@
 
 .land {
   fill: #000;
-  hover: rgb(217, 17, 17);
 }
 
 .boundary {
@@ -70,29 +69,34 @@ svg {margin-left:auto; margin-right: auto;}
         <a href="https://github.com/davidpham87/map_pictures" class="button"><small>View project on</small>GitHub</a>        
       </div>
     </header>
+    
+    <div id="wrap" style="margin:0 auto; text-algin:center;"> 
+      <div width="480px" height="500px" 
+           style="display:inline-block; vertical-align:top;">
+        <svg height="5px"></svg> <!-- To make some space -->
+        <svg id="worldMap" style='background:#2e7bcf'></svg>
+      </div>
 
-   <div id="wrap" style="margin:0 auto; text-algin:center;"> 
-     <div width="480px" height="500px" 
-          style="display:inline-block; vertical-align:top;">
-       <svg height="5px"></svg> <!-- To make some space -->
-       <svg id="worldMap" style='background:#2e7bcf'></svg>
-     </div>
-     <div width="480px" height="500px" 
-          style="display:inline-block; vertical-align:top" >
-       <div id="sliderDiv">
-         <div id="pictureSlider" class="flexslider">
-		   <ul class="slides">
-		     <li>
-			   <img  src="data/pictures/Geneva/01.jpg"/>
-		     </li>
-           </ul>
-         </div>
-       </div>
-       </div>
-       
-     </div>
-   </div>
-   <script type="text/javascript" src="js/slider.js"></script>
-   <script type="text/javascript" src="scripts/world_map.js"></script>
+      <div width="480px" height="500px" 
+           style="display:inline-block; vertical-align:top" >
+        <div id="sliderDiv">
+          <div id="pictureSlider" class="flexslider">
+		        <ul class="slides">
+		          <li>
+			          <img  src="data/pictures/Geneva/01.jpg"/>
+		          </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align:center;">
+	    <span style="color:rgb(0,0,0)">
+		    &copy; 2014-05, David Pham. HTML & CSS Templates by Github.
+	    </span>
+    </div>
+    <script type="text/javascript" src="js/slider.js"></script>
+    <script type="text/javascript" src="scripts/world_map.js"></script>
   </body>
 </html>

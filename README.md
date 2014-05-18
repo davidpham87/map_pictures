@@ -1,7 +1,7 @@
 map_pictures
 ============
 
-This is a simple project to show to your friends where you have been around the world!
+This is a simple project to show to your friends where you have been around the world! 
 
 # How to use it
 
@@ -21,7 +21,7 @@ The csv has the following columns:
 
 The pictures should be *.jpg* files in 4/3 format (with resolution for example _640x480_).
 
-As previously noted the pictures for each _location_ __loc__ are located in the folder _data/pictures/**loc**_. They are nammed as __xx.jpg__ where _xx_ starts from 01 up to the number given by _nPictures_.
+As previously noted the pictures for each _location_ __loc__ are located in the folder _data/pictures/**loc**_. They are named as __xx.jpg__ where _xx_ starts from 01 up to the number given by _nPictures_.
 
 For example, to continue our example about New York, the folder __data/pictures/New York__ should contain the jpegs __01.jpg__, __02.jpg__, ..., up to nPictures.
 
