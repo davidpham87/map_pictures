@@ -1,4 +1,4 @@
-### Automatic Image Resizing and Cropping
+# Automatic Image Resizing and Cropping
 
 ## Introduction
 
