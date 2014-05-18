@@ -28,3 +28,4 @@ The pictures are all renamed and resized to fit in the pictures sliders from the
 ## Note
 Any format of image are resized (ie. portrait but also 3/2 format pictures). The truncation or crop are taken from the middle of the pictures.
 
+The pictures are resized to 640 and 480. 
