@@ -17,13 +17,13 @@ folder *pictures_landscape/loc*.
 For example, some pictures from Geneva would be in the folder *pictures_portrait/Geneva* and the results would be in
 *pictures_landscape/Geneva*.
 
-Then you just need to run it with
+Then you just need to run the scripts with:
 
 ```{bash}
 python resize_crop_pictures.py
 ```
 
-The pitures are all renamed and resized to fit in the pictures sliders from the **index.html**.
+The pictures are all renamed and resized to fit in the pictures sliders from the **index.html**.
 
 ## Note
 Any format of image are resized (ie. portrait but also 3/2 format pictures). The truncation or crop are taken from the middle of the pictures.
