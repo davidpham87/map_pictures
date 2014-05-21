@@ -1,6 +1,5 @@
 var width = 580,
-height = 480;
-
+    height = 480;
 
 //d3.geo.azimuthalEqualArea()
 var projection = d3.geo.mercator() 
@@ -15,20 +14,34 @@ var graticule = d3.geo.graticule();
 
 // Zoom hack
 var zoom = d3.behavior.zoom()
+  .translate([0, 0])
+  .scale(1)
   .scaleExtent([0.5, 10])
   .on("zoom", zoomed);
 
-var map = d3.select('#worldMap')
+d3.select('#worldMap')
+  .attr("class", "overlay")
   .attr("width", width)
   .attr("height", height)
   .call(zoom);
 
-var svg = map.append("g");
+// d3.select('#worldMap')
+//   .append("rect")
+//   .attr("width", width)
+//   .attr("height", height)
 
-// End of Zoom
+var city_radius = 5;
+
+var svg =  d3.select('#worldMap').append("g");
+
 function zoomed() {
-  svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
+  var d3_scale = d3.event.scale;
+  svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3_scale + ")");
+  svg.selectAll(".city")
+    .attr("r", city_radius/Math.sqrt(d3_scale))
+    .style("stroke-width", 2/Math.sqrt(d3_scale) + 'px');
 }
+// End of Zoom
 
 svg.append("path")
   .datum(graticule)
@@ -41,15 +54,11 @@ queue()
 
 d3.csv('data/location.csv', putCityVoronoi)
 
-
-
 function createMap(error, world) {
-
   svg.insert("path", ".graticule")
     .datum(topojson.feature(world, world.objects.land))
     .attr("class", "land")
     .attr("d", path);
-
 }
 
 // Put dots on the map for the location from a csv file 
@@ -127,7 +136,8 @@ function putCityVoronoi(error, data){
     .data(data)
     .enter().append("circle")
     .attr("class", "city")
-    .attr('r', function(d) {return 0.22*(d.bubbleSize+1);})
+//    .attr('r', function(d) {return 0.22*(d.bubbleSize+1);})
+    .attr('r', city_radius)
     .attr("cx", function(d) { return pathCentroid(d)[0]; })
     .attr("cy", function(d) { return pathCentroid(d)[1]; })
     .on("click", updateSlider);
@@ -160,6 +170,7 @@ function putCityVoronoi(error, data){
       slideshowSpeed: 3000,
     });
   }
+
   function updatePictures(location, nPictures){
     var newPict = function(n){            
       return '<li> \n  <img src="data/pictures/' + 
